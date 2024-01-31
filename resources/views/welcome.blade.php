@@ -17,6 +17,7 @@
                         <div class="card-header">
                           Obtain Access Token
                         </div>
+                        <h4 id="access_token"></h4>
                         <div class="card-body">
                           <button id="getAccessToken" class="btn btn-primary">Request Access Token</button>
                         </div>
