@@ -18,7 +18,7 @@
                           Obtain Access Token
                         </div>
                         <div class="card-body">
-                          <button class="btn btn-primary">Request Access Token</button>
+                          <button id="getAccessToken" class="btn btn-primary">Request Access Token</button>
                         </div>
 
                     </div>
@@ -53,5 +53,18 @@
 
         </div>
     </center>
+    <script>
+        document.getElementById('getAccessToken').addEventListener('click', (event) => {
+            event.preventDefault()
+
+            axios.post('/get-token', {})
+            .then((response) => {
+                console.log(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+        })
+    </script>
     </body>
 </html>
