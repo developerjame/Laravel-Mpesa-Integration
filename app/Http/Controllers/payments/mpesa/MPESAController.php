@@ -29,7 +29,7 @@ class MPESAController extends Controller
     }
 
     public function makeHttp($url, $body){
-       {  "OriginatorConversationID": "feb5e3f2-fbbc-4745-844c-ee37b546f627",
+        "OriginatorConversationID": "feb5e3f2-fbbc-4745-844c-ee37b546f627",
         "InitiatorName": "testapi",
         "SecurityCredential":"EsJocK7+NjqZPC3I3EO+TbvS+xVb9TymWwaKABoaZr/Z/n0UysSs..",
         "CommandID":"BusinessPayment",
@@ -40,6 +40,6 @@ class MPESAController extends Controller
    "QueueTimeOutURL":"https://mydomain.com/b2c/queue",
    "ResultURL":"https://mydomain.com/b2c/result",
    "Occassion":"Christmas"
-       }
+       
     }
 }
