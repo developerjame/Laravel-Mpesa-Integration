@@ -27,4 +27,8 @@ class MPESAController extends Controller
 
             return $response;
     }
+
+    public function makeHttp($url, $body){
+        
+    }
 }
