@@ -29,6 +29,8 @@ class MPESAController extends Controller
     }
 
     public function makeHttp($url, $body){
-        
+        $url = 'https://sandbox.safaricom.co.ke/mpesa/b2c/v1/paymentrequest';
+
+        $curl = curl_init();
     }
 }
