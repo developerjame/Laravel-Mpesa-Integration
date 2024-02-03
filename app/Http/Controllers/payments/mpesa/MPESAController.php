@@ -36,7 +36,10 @@ class MPESAController extends Controller
             $curl,
             array(
                CURLOPT_URL => $url,
-               CURLOPT_HTTPHEADER => array('Content-Type:application/json','Authorization:Bearer ACCESS_TOKEN')
+               CURLOPT_HTTPHEADER => array('Content-Type:application/json','Authorization:Bearer ACCESS_TOKEN'),
+               CURLOPT_RETURNTRANSFER = true.
+               CURLOPT_POST => true,
+               
             )
             );
         curl_setopt($curl, CURLOPT_URL, $url);
