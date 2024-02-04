@@ -39,6 +39,7 @@ class MPESAController extends Controller
                CURLOPT_HTTPHEADER => array('Content-Type:application/json','Authorization:Bearer ACCESS_TOKEN'),
                CURLOPT_RETURNTRANSFER = true.
                CURLOPT_POST => true,
+               CURLOPT_POSTFIELDS => json_encode($body)
                
             )
             );
