@@ -26,19 +26,30 @@ class MPESAController extends Controller
         $response = curl_exec($curl);
         \curl_close($curl);
 
-        return $response;
+        return $response->access_token;
+    }
+
+    /**
+     * Register URl
+     */
+    public function registerURLS(){
+        $body = array(
+            'Shortcode' => env('MPESA_SHORTCORE'),
+            'ResponseType' => 'Completed',
+            'ConfirmationURL' => env('MPESA_TEST_URL') . '/api/confirmation',
+            'ValidationURL' => env('MPESA_TEST_URL') . '/api/validation'
+        );
     }
 
     public function makeHttp($url, $body)
     {
-        $url = 'https://sandbox.safaricom.co.ke/mpesa/b2c/v1/paymentrequest';
-
+        
         $curl = curl_init();
         curl_setopt_array(
             $curl,
             array(
                 CURLOPT_URL => $url,
-                CURLOPT_HTTPHEADER => array('Content-Type:application/json', 'Authorization:Bearer ACCESS_TOKEN'),
+                CURLOPT_HTTPHEADER => array('Content-Type:application/json', 'Authorization:Bearer '.$this->getAccessToken()),
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_POST => true,
                 CURLOPT_POSTFIELDS => json_encode($body)
