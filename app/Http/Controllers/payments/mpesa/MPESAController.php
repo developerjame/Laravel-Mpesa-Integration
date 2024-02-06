@@ -39,6 +39,12 @@ class MPESAController extends Controller
             'ConfirmationURL' => env('MPESA_TEST_URL') . '/api/confirmation',
             'ValidationURL' => env('MPESA_TEST_URL') . '/api/validation'
         );
+
+        $url = env('MPESA_ENV') == 0
+        ? 'https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl'
+        : 'https://api.safaricom.co.ke/mpesa/c2b/v1/registerurl';
+
+        $response = $this->makeHttp($url, $body);
     }
 
     public function makeHttp($url, $body)
