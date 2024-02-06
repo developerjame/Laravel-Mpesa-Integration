@@ -74,6 +74,11 @@
 
             axios.post('register-urls', {})
             .then((response) => {
+                if(response.data.ResponseDescription){
+                    document.getElementById('response').innerHTML = response.data.ResponseDescription
+                } else {
+                    document.getElementById('response').innerHTML = response.data.errorMessage
+                }
                 console.log(response.data);
             })
             .catch((error) => {
