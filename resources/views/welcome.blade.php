@@ -56,7 +56,7 @@
     </center>
    
     <script>
-        document.getElementById('getAccessToken').addEventListener('click', (event) => {
+        document.getElementById('getAccessToken').addEventListener('', (event) => {
             event.preventDefault()
 
             axios.post('/get-token', {})
